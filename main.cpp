@@ -14,9 +14,9 @@
 
 using namespace std;
 
-const int GREEDY_ATTEMPTS_COUNT;
-const int SLIDES_SETS_COUNT;
-const int SLIDESHOW_PER_SET;
+const int GREEDY_ATTEMPTS_COUNT = 10;
+const int SLIDES_SETS_COUNT = 10;
+const int SLIDESHOW_PER_SET = 10;
 
 struct Image {
 	char orientation;
@@ -79,7 +79,7 @@ int main() {
 		outputFileName = fileName + ".out";
 		readInputFile(inputFileName);
 
-		selectVerticalSlides();
+		divideSlides();
 
 		//writeOutputFile(outputFileName);
 	}
