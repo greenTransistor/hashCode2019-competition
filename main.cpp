@@ -68,7 +68,14 @@ void readInputFile(string name) {
 void writeOutputFile(string name) {
 	ofstream outf(name);
 
-	//
+	outf << answer.size() << "\n";
+	for (Slide* slide : answer) {
+		outf << slide->ids[0];
+		if (slide->ids.size() > 1) {
+			outf << " " << slide->ids[1];
+		}
+		outf << "\n";
+	}
 	outf.close();
 }
 
@@ -81,7 +88,8 @@ int main() {
 
 		divideSlides();
 
-		//writeOutputFile(outputFileName);
+		writeOutputFile(outputFileName);
+		cout << "For dataset #" << fileIndex << " '" << fileName << "' the best score is " << bestScore << "\n";
 	}
 
 	return 0;
