@@ -12,7 +12,7 @@ struct Slide {
 		this->tags = merge(im1.tags, im2.tags);
 	}
 	
-	vector <int> merge(vector <int> tags1, vector <int> tags2) {
+	vector <int> merge(vector <int>& tags1, vector <int>& tags2) {
 		vector <int> tags;
 		int p1 = 0, p2 = 0;
 		while (p1 != tags1.size() || p2 != tags2.size()) {
