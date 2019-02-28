@@ -40,6 +40,7 @@ int bestScore;
 #include "scoring.cpp"
 #include "randomVerticalSlides.cpp"
 #include "calculate_result.cpp"
+#include "calcBestAns.cpp"
 
 void readInputFile(string name) {
 	int imagesCount;
@@ -87,6 +88,7 @@ int main() {
 		readInputFile(inputFileName);
 
 		divideSlides();
+		calcBestAns();
 
 		writeOutputFile(outputFileName);
 		cout << "For dataset #" << fileIndex << " '" << fileName << "' the best score is " << bestScore << "\n";
