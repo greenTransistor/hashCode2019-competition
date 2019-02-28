@@ -8,3 +8,4 @@ debug.cpp
 test.cpp
 output.*
 *.out
+test_bound.cpp
