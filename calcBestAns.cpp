@@ -1,7 +1,7 @@
 
 void updateAns(const vector <Slide*>& sls){
 	
-	vector <Slide*> sls0;
+	vector <Slide*> sls0 = sls;
 	random_shuffle(sls0.begin(), sls0.end());
 	
 	int newAns = calculate_result(sls0);
