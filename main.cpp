@@ -14,6 +14,10 @@
 
 using namespace std;
 
+const int GREEDY_ATTEMPTS_COUNT;
+const int SLIDES_SETS_COUNT;
+const int SLIDESHOW_PER_SET;
+
 struct Image {
 	char orientation;
 	int id;
@@ -30,9 +34,12 @@ string fileName, inputFileName, outputFileName;
 vector<Image> images;
 vector<Slide*> slides;
 vector<Slide*> answer;
+int bestScore;
 
+#include "memory.cpp"
 #include "scoring.cpp"
 #include "randomVerticalSlides.cpp"
+#include "calculate_result.cpp"
 
 void readInputFile(string name) {
 	int imagesCount;
