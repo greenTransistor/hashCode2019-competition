@@ -14,7 +14,8 @@
 
 using namespace std;
 
-const int GREEDY_ATTEMPTS_COUNT = 10;
+const int GREEDY_ATTEMPTS_COUNT = 5;
+const int GREEDY_CANDIDATES_COUNT = 1000;
 const int SLIDES_SETS_COUNT = 10;
 const int SLIDESHOW_PER_SET = 10;
 
@@ -42,6 +43,7 @@ int bestScore = 0;
 #include "randomVerticalSlides.cpp"
 #include "calculate_result.cpp"
 #include "calcBestAns.cpp"
+#include "greedy_algorithm.cpp"
 
 void readInputFile(string name) {
 	int imagesCount;
@@ -90,7 +92,8 @@ int main() {
 
 		bestScore = 0;
 		divideSlides();
-		calcBestAns();
+		//calcBestAns();
+		greedy_algorithm();
 
 		writeOutputFile(outputFileName);
 		cout << "For dataset #" << fileIndex << " '" << fileName << "' the best score is " << bestScore << "\n";

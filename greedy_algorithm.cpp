@@ -4,18 +4,18 @@ void greedy_algorithm_attempt() {
 	for (int i = 0; i < n; i++) {
 		poss.insert(i);
 	}
-	int first_pos = rand() % n; 
+	int first_pos = rand() % n;
 	vector <Slide*> bsls = {slides[first_pos]};
 	poss.erase(first_pos);
 	for (int i = 1; i < n; i++) {
-		int mxscore = 0, mxpos = 0;
+		int mxscore = -1, mxpos = 0;
 		for (int j = 0; j < GREEDY_CANDIDATES_COUNT; j++) {
 			int pos = rand() % n;
 			auto it = poss.lower_bound(pos);
 			if (it == poss.end()) {
 				it = poss.begin();
 			}
-			int score = countScore(bsls[i - 1], slides[*it]);
+			int score = countScore(*bsls[i - 1], *slides[*it]);
 			if (score > mxscore) {
 				mxscore = score;
 				mxpos = *it;
@@ -27,12 +27,13 @@ void greedy_algorithm_attempt() {
 	int res = calculate_result(bsls);
 	if (res > bestScore) {
 		bestScore = res;
-		answer = bsls;
+		setAnswer(bsls);
 	}
 }
 
 void greedy_algorithm() {
 	for (int i = 0; i < GREEDY_ATTEMPTS_COUNT; i++) {
+		getRandomSlides();
 		greedy_algorithm_attempt();		
 	}
 }
