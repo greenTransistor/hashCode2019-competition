@@ -71,6 +71,9 @@ int main() {
 		inputFileName = fileName + ".in";
 		outputFileName = fileName + ".out";
 		readInputFile(inputFileName);
+
+		selectVerticalSlides();
+
 		//writeOutputFile(outputFileName);
 	}
 
