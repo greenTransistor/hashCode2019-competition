@@ -1,9 +1,9 @@
-vector<int> verticalSlidesIndexes;
+vector<int> verticalImagesIndexes;
 
 void selectVerticalSlides() {
-	for (int i = 0; i < slides.size(); i++) {
-		if (slides[i]->orientation == 'V') {
-			verticalSlidesIndexes.push_back(i);
+	for (int i = 0; i < images.size(); i++) {
+		if (images[i].orientation == 'V') {
+			verticalImagesIndexes.push_back(i);
 		}
 	}
 }

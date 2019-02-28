@@ -20,15 +20,17 @@ struct Image {
 	vector<int> tags;
 };
 
+#include "slide.cpp"
+
 const int FILES_COUNT = 5;
 const string FILE_NAMES[FILES_COUNT] = {"a_example", "b_lovely_landscapes", "c_memorable_moments", "d_pet_pictures", "e_shiny_selfies"};
 string fileName, inputFileName, outputFileName;
 
 //Global
 vector<Image> images;
-vector<*Slide> slides;
+vector<Slide*> slides;
+vector<Slide*> answer;
 
-#include "slide.cpp"
 #include "scoring.cpp"
 #include "randomVerticalSlides.cpp"
 
