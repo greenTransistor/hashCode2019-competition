@@ -37,16 +37,18 @@ void readInputFile(string name) {
 	int tag;
 
 	inf >> imagesCount;
+	images.resize(imagesCount);
 	for (int i = 0; i < imagesCount; i++) {
 		newImage = Image();
 		newImage.id = i;
 		inf >> newImage.orientation;
 		inf >> tagsCount;
+		newImage.tags.resize(tagsCount);
 		for (int j = 0; j < tagsCount; j++) {
 			inf >> tag;
-			newImage.tags.push_back(tag);
+			newImage.tags[j] = tag;
 		}
-		images.push_back(newImage);
+		images[i] = newImage;
 	}
 	inf.close();
 }
