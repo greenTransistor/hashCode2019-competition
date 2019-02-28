@@ -37,6 +37,7 @@ vector<Slide*> answer;
 int bestScore = 0;
 
 #include "memory.cpp"
+#include "setAnswer.cpp"
 #include "scoring.cpp"
 #include "randomVerticalSlides.cpp"
 #include "calculate_result.cpp"

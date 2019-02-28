@@ -1,6 +1,6 @@
 void clearSlides() {
 	for (Slide* slide : slides) {
-		//delete slide;
+		delete slide;
 	}
 	slides.clear();
 }
