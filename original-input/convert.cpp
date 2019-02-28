@@ -48,6 +48,7 @@ void readInputFile(string name) {
 	Image newImage;
 	string tag;
 
+	images.clear();
 	inf >> imagesCount;
 	for (int i = 0; i < imagesCount; i++) {
 		newImage = Image();
