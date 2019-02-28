@@ -29,11 +29,14 @@ vector<Image> images;
 //Auxiliary
 map<string, int> tagsIds;
 
-void getTagId(string tagName) {
+int getTagId(string tagName) {
 	auto searchResult = tagsIds.find(tagName);
 	if (searchResult == tagsIds.end()) {
 		int newId = tagsIds.size();
-		tagsIds.insert();
+		tagsIds.insert(make_pair(tagName, newId));
+		return newId;
+	} else {
+		return searchResult->second;
 	}
 }
 
