@@ -1,3 +1,5 @@
+int greedyAttemptNumber;
+
 void greedy_algorithm_attempt() {
 	set <int> poss;
 	int n = slides.size();
@@ -8,6 +10,9 @@ void greedy_algorithm_attempt() {
 	vector <Slide*> bsls = {slides[first_pos]};
 	poss.erase(first_pos);
 	for (int i = 1; i < n; i++) {
+		if (i % 100 == 99) {
+			cout << "File " << fileName << ", attempt " << greedyAttemptNumber << "/" << GREEDY_ATTEMPTS_COUNT << ", slide " << (i + 1) << "/" << n << "\n";
+		}
 		int mxscore = -1, mxpos = 0;
 		for (int j = 0; j < GREEDY_CANDIDATES_COUNT; j++) {
 			int pos = rand() % n;
@@ -32,8 +37,8 @@ void greedy_algorithm_attempt() {
 }
 
 void greedy_algorithm() {
-	for (int i = 0; i < GREEDY_ATTEMPTS_COUNT; i++) {
+	for (greedyAttemptNumber = 1; greedyAttemptNumber <= GREEDY_ATTEMPTS_COUNT; greedyAttemptNumber++) {
 		getRandomSlides();
-		greedy_algorithm_attempt();		
+		greedy_algorithm_attempt();
 	}
 }
