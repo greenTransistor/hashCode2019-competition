@@ -5,7 +5,7 @@ void getRandomSlides() {
 	vector<int> shuffledIndexes = verticalImagesIndexes;
 	random_shuffle(shuffledIndexes.begin(), shuffledIndexes.end());
 	clearSlides();
-	for (int i = 0; i < shuffledIndexes.size() - 1; i += 2) {
+	for (int i = 0; i + 1 < shuffledIndexes.size(); i += 2) {
 		slides.push_back(new Slide(images[shuffledIndexes[i]], images[shuffledIndexes[i + 1]]));
 	}
 	for (int i = 0; i < horizontalImagesIndexes.size(); i++) {
