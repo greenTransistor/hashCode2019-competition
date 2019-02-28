@@ -87,6 +87,7 @@ int main() {
 		outputFileName = fileName + ".out";
 		readInputFile(inputFileName);
 
+		bestScore = 0;
 		divideSlides();
 		calcBestAns();
 
