@@ -34,7 +34,7 @@ string fileName, inputFileName, outputFileName;
 vector<Image> images;
 vector<Slide*> slides;
 vector<Slide*> answer;
-int bestScore;
+int bestScore = 0;
 
 #include "memory.cpp"
 #include "scoring.cpp"
